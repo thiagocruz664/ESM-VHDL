@@ -1,0 +1,22 @@
+v 4
+file . "not_gate.vhd" "fe8cc7e04e1ce6c6e2876b0813e0519f62710f46" "20260416022136.294":
+  entity not_gate at 1( 0) + 0 on 37;
+  architecture func of not_gate at 11( 138) + 0 on 38;
+file . "tb_or.vhd" "f502f9d0690d4883d0bd1f561fe53c063aced23f" "20260416014715.557":
+  entity tb_or at 2( 2) + 0 on 21;
+  architecture sim of tb_or at 8( 81) + 0 on 22;
+file . "or_gate.vhd" "1a49815abb64152649956f3010eba8b37f969aa2" "20260416022141.545":
+  entity or_gate at 1( 0) + 0 on 39;
+  architecture func of or_gate at 12( 158) + 0 on 40;
+file . "tb_and.vhd" "9a9bb6635bbf1b5f6d52906d92965dfd0e5cd820" "20260416013513.303":
+  entity tb_and at 2( 2) + 0 on 15;
+  architecture sim of tb_and at 8( 82) + 0 on 16;
+file . "and_gate.vhd" "4d59ff595f0fe481cbe02d29acd533e12a1e836b" "20260416022131.144":
+  entity and_gate at 1( 0) + 0 on 35;
+  architecture func of and_gate at 12( 159) + 0 on 36;
+file . "tb_all_gates.vhd" "6efda7f1ae3fa3804fff27adecd96e6642fac8e0" "20260416022218.714":
+  entity tb_ag at 1( 0) + 0 on 41;
+  architecture sim of tb_ag at 7( 79) + 0 on 42;
+file . "tb_not.vhd" "b5911346f7296f5cffd22fd01308f88206417b28" "20260416021716.350":
+  entity tb_not at 1( 0) + 0 on 31;
+  architecture sim of tb_not at 7( 80) + 0 on 32;

@@ -1,0 +1,53 @@
+$date
+  Thu Apr 30 16:44:36 2026
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_adder $end
+$var reg 16 ! a[15:0] $end
+$var reg 16 " b[15:0] $end
+$var reg 16 # s[15:0] $end
+$scope module uut $end
+$var reg 16 $ a[15:0] $end
+$var reg 16 % b[15:0] $end
+$var reg 16 & s[15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000000000000000 !
+b0000000000001010 "
+b0000000000001010 #
+b0000000000000000 $
+b0000000000001010 %
+b0000000000001010 &
+#10000
+b0000000000001010 !
+b1111111111111111 "
+b0000000000001001 #
+b0000000000001010 $
+b1111111111111111 %
+b0000000000001001 &
+#20000
+b0000000000001010 "
+b0000000000010100 #
+b0000000000001010 %
+b0000000000010100 &
+#30000
+b1010000010100000 !
+b1010001100110011 "
+b0100001111010011 #
+b1010000010100000 $
+b1010001100110011 %
+b0100001111010011 &
+#40000

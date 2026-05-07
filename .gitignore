@@ -1,0 +1,8 @@
+.*
+!.gitignore
+
+vhdl.code-workspace
+
+.cf
+.vcd
+.zip
