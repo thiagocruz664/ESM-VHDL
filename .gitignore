@@ -3,6 +3,6 @@
 
 vhdl.code-workspace
 
-.cf
-.vcd
-.zip
+*.cf
+*.vcd
+*.zip
