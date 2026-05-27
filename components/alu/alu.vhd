@@ -8,12 +8,13 @@ entity alu is
         a_alu,b_alu : in std_logic_vector(15 downto 0);
         alu_control : in std_logic_vector(1 downto 0);
         salida_alu : out std_logic_vector(15 downto 0);
-        alu_flags : out std_ulogic_vector(2 downto 0)
+        alu_flags : out std_ulogic_vector(2 downto 0) --nzp
     );
 end entity;
 
 architecture func of alu is
     signal mux_entradas : entradas;
+    signal resultado : std_logic_vector(15 downto 0);
 begin
     g_add : entity work.adder
         port map(
@@ -41,7 +42,22 @@ begin
             entradas(1) => mux_entradas(1),
             entradas(2) => mux_entradas(2),
             entradas(3) => (others => '0'),
-            salida => salida_alu,
+            salida => resultado,
             s => alu_control
         );
+    
+    salida_alu <= resultado;
+
+    process(resultado)
+    begin
+        if is_x(resultado) then --Esto esta aca solo pq al inicio puede haber alguna señal indefinida lo cual rompe signed
+            alu_flags <= "000";
+        elsif signed(resultado) > 0 then
+            alu_flags <= "001";
+        elsif signed(resultado) < 0 then
+            alu_flags <= "100";
+        else
+            alu_flags <= "010";
+        end if;
+    end process;
 end architecture;

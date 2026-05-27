@@ -6,16 +6,18 @@ use work.data_types.all;
 entity tb_alu is
 end entity;
 
-architecture func of alu is
+architecture func of tb_alu is
     signal a,b,s : std_logic_vector(15 downto 0); 
     signal control : std_logic_vector(1 downto 0);
+    signal flags : std_ulogic_vector(2 downto 0);
 begin
     uut : entity work.alu
         port map(
             a_alu => a,
             b_alu => b,
             salida_alu => s,
-            alu_control => control
+            alu_control => control,
+            alu_flags => flags
         );
     
     process
