@@ -6,9 +6,9 @@ use work.data_types.all;
 entity alu is
     port (
         a_alu,b_alu : in std_logic_vector(15 downto 0);
-        alu_control : in std_logic_vector(1 downto 0);
+        control : in std_logic_vector(1 downto 0);
         salida_alu : out std_logic_vector(15 downto 0);
-        alu_flags : out std_logic_vector(2 downto 0) --nzp
+        flags : out std_ulogic_vector(2 downto 0) --nzp
     );
 end entity;
 
@@ -43,7 +43,7 @@ begin
             entradas(2) => mux_entradas(2),
             entradas(3) => (others => '0'),
             salida => resultado,
-            s => alu_control
+            s => control
         );
     
     salida_alu <= resultado;
@@ -51,13 +51,13 @@ begin
     process(resultado)
     begin
         if is_x(resultado) then --Esto esta aca solo pq al inicio puede haber alguna señal indefinida lo cual rompe signed
-            alu_flags <= "000";
+            flags <= "000";
         elsif signed(resultado) > 0 then
-            alu_flags <= "001";
+            flags <= "001";
         elsif signed(resultado) < 0 then
-            alu_flags <= "100";
+            flags <= "100";
         else
-            alu_flags <= "010";
+            flags <= "010";
         end if;
     end process;
 end architecture;

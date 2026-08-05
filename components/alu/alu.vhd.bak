@@ -8,7 +8,7 @@ entity alu is
         a_alu,b_alu : in std_logic_vector(15 downto 0);
         alu_control : in std_logic_vector(1 downto 0);
         salida_alu : out std_logic_vector(15 downto 0);
-        alu_flags : out std_logic_vector(2 downto 0) --nzp
+        alu_flags : out std_ulogic_vector(2 downto 0) --nzp
     );
 end entity;
 
