@@ -26,8 +26,24 @@ begin
     mu : entity work.mu
         port map(
             a1 => pc,
-            a2 =>
+            rd1 => instruction,
+	    a2 => (others => '0'),
+	    wd2 => (others => '0'),
+	    clk => '0',
+	    we => '0',
+	    rd2 => open,
         );
+    uc : entity work.control_unit
+    	port map(
+            instruction => instruction,
+            alu_cc      => alu_cc,
+            we          => we,
+            alu_control => alu_control,
+            mux1_sel    => mux1_sel,
+            mux2_sel    => mux2_sel,
+            mux3_sel    => mux3_sel,
+            mux4_sel    => mux4_sel
+    );
     process
     begin
     end process;
