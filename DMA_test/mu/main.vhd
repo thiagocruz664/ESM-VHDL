@@ -25,6 +25,7 @@ entity MU_VHDL is
     --------------- OTROS PUERTOS ---------------
 		led_debug   : out std_logic_vector(7 downto 0);
 		we_i		: in std_logic;
+		a1_a2_select: in std_logic;
 		ex_bttn     : in std_logic := '0'
     );
 end MU_VHDL;
@@ -107,7 +108,7 @@ architecture Behavioral of MU_VHDL is
 	end function;
 	 
 	------------------------------ OTRAS SEÑALES ------------------------------
-	signal ex_bttn_prev : std_logic := '0';
+	signal a1_a2_select_prev : std_logic := '0';
 begin
     ------------------- COMPONENTES PARA LCD ------------------------
     u1: PROCESADOR_LCD_REVD
@@ -236,10 +237,19 @@ begin
 						end if;
 					when CONFIRM_STATE =>
 						led_debug(4) <= '1';
-						a1_ascii(3) <= hex_to_ascii(num_hexa(15 downto 12));
-						a1_ascii(2) <= hex_to_ascii(num_hexa(11 downto 8));
-						a1_ascii(1) <= hex_to_ascii(num_hexa(7 downto 4));
-						a1_ascii(0) <= hex_to_ascii(num_hexa(3 downto 0));
+						if a1_a2_select = '1' then
+							a1_data <= num_hexa;
+							a1_ascii(3) <= hex_to_ascii(num_hexa(15 downto 12));
+							a1_ascii(2) <= hex_to_ascii(num_hexa(11 downto 8));
+							a1_ascii(1) <= hex_to_ascii(num_hexa(7 downto 4));
+							a1_ascii(0) <= hex_to_ascii(num_hexa(3 downto 0));
+						else
+							a2_data <= num_hexa;
+							a2_ascii(3) <= hex_to_ascii(num_hexa(15 downto 12));
+							a2_ascii(2) <= hex_to_ascii(num_hexa(11 downto 8));
+							a2_ascii(1) <= hex_to_ascii(num_hexa(7 downto 4));
+							a2_ascii(0) <= hex_to_ascii(num_hexa(3 downto 0));
+						end if;
 						state <= COL1W;
 				end case;
 			else
@@ -254,19 +264,23 @@ begin
 ------------------------ INICIO CODIGO EJECUCION -----------------------------
 	process(clk) begin
 		if rising_edge(clk) then
-			ex_bttn_prev <= ex_bttn;
-			if ex_bttn_prev = '1' and ex_bttn = '0' then
-				a1_data <= num_hexa;
-			end if;
-		end if;
-	end process;
-	
-	process(clk) begin
-		if rising_edge(clk) then
 			rd1_ascii(3) <= hex_to_ascii(rd1_data(15 downto 12));
 			rd1_ascii(2) <= hex_to_ascii(rd1_data(11 downto 8));
 			rd1_ascii(1) <= hex_to_ascii(rd1_data(7 downto 4));
 			rd1_ascii(0) <= hex_to_ascii(rd1_data(3 downto 0));
+			rd2_ascii(3) <= hex_to_ascii(rd2_data(15 downto 12));
+			rd2_ascii(2) <= hex_to_ascii(rd2_data(11 downto 8));
+			rd2_ascii(1) <= hex_to_ascii(rd2_data(7 downto 4));
+			rd2_ascii(0) <= hex_to_ascii(rd2_data(3 downto 0));
+		end if;
+	end process;
+
+	process(clk) begin
+		if rising_edge(clk) then
+			a1_a2_select_prev <= a1_a2_select;
+			if a1_a2_select_prev = '1' and a1_a2_select = '0' then
+				num_hexa <= "0000000000000000";
+			end if;
 		end if;
 	end process;
 -------------------------- FIN CODIGO EJECUCION ------------------------------
