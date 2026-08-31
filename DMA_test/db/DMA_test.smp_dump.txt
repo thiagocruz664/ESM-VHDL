@@ -1,0 +1,13 @@
+
+State Machine - |MU_VHDL|state
+Name state.CONFIRM_STATE state.WAIT_STATE state.COL4L state.COL4W state.COL3L state.COL3W state.COL2L state.COL2W state.COL1L state.COL1W 
+state.COL1W 0 0 0 0 0 0 0 0 0 0 
+state.COL1L 0 0 0 0 0 0 0 0 1 1 
+state.COL2W 0 0 0 0 0 0 0 1 0 1 
+state.COL2L 0 0 0 0 0 0 1 0 0 1 
+state.COL3W 0 0 0 0 0 1 0 0 0 1 
+state.COL3L 0 0 0 0 1 0 0 0 0 1 
+state.COL4W 0 0 0 1 0 0 0 0 0 1 
+state.COL4L 0 0 1 0 0 0 0 0 0 1 
+state.WAIT_STATE 0 1 0 0 0 0 0 0 0 1 
+state.CONFIRM_STATE 1 0 0 0 0 0 0 0 0 1 

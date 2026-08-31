@@ -15,7 +15,7 @@ architecture func_mem_u of mem_u is
 
     type ram_type is array (0 to 65535) of std_logic_vector(15 downto 0);
 
-    signal mem_ram : ram_type := (
+    signal ram : ram_type := (
         --se inicializa todo en cero, aca se deberia agregar todo lo que son protocolos de traps
         others => (others => '0')
     );
@@ -23,11 +23,11 @@ begin
     process(clk)
     begin
         if rising_edge(clk) then
-            rd1 <= mem_ram(to_integer(unsigned(a1)));
+            rd1 <= ram(to_integer(unsigned(a1)));
             if we = '1' then
-                mem_ram(to_integer(unsigned(a2))) <= wd2;
+                ram(to_integer(unsigned(a2))) <= wd2;
             else
-                rd2 <= mem_ram(to_integer(unsigned(a2)));
+                rd2 <= ram(to_integer(unsigned(a2)));
             end if;
         end if;
     end process;

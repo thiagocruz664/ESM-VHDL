@@ -30,7 +30,7 @@ entity MU_VHDL is
 end MU_VHDL;
 
 architecture Behavioral of MU_VHDL is
-    CONSTANT NUM_INSTRUCCIONES : INTEGER := 41; 	--INDICAR EL NUMERO DE INSTRUCCIONES PARA LA LCD
+    CONSTANT NUM_INSTRUCCIONES : INTEGER := 20; 	--INDICAR EL NUMERO DE INSTRUCCIONES PARA LA LCD
 
     ------------------------------ SEÑALES PARA LCD ------------------------------
     component PROCESADOR_LCD_REVD is

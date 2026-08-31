@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RS",
+					"strict" : false
+				},
+				{
+					"name" : "ENA",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_LCD[7]",
+					"strict" : false
+				},
+				{
+					"name" : "C[3]",
+					"strict" : false
+				},
+				{
+					"name" : "C[2]",
+					"strict" : false
+				},
+				{
+					"name" : "C[1]",
+					"strict" : false
+				},
+				{
+					"name" : "C[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_debug[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_debug[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_debug[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_debug[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "L[3]",
+					"strict" : false
+				},
+				{
+					"name" : "L[2]",
+					"strict" : false
+				},
+				{
+					"name" : "L[1]",
+					"strict" : false
+				},
+				{
+					"name" : "L[0]",
+					"strict" : false
+				},
+				{
+					"name" : "we_i",
+					"strict" : false
+				},
+				{
+					"name" : "ex_bttn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
