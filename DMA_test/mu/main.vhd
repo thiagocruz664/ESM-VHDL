@@ -26,7 +26,7 @@ entity MU_VHDL is
 		led_debug   : out std_logic_vector(7 downto 0);
 		we_i		: in std_logic;
 		a1_a2_select: in std_logic;
-		ex_bttn     : in std_logic := '0'
+		wd     		: in std_logic_vector(1 downto 0)
     );
 end MU_VHDL;
 
@@ -128,7 +128,7 @@ begin
 		port map (
 			a1 => a1_data,
 			a2 => a2_data,
-			wd2 => wd2_data,
+			wd2 => "00000000000000"&wd,
 			clk => CLK,
 			we => we_i,
 			rd1 => rd1_data,
@@ -186,7 +186,10 @@ begin
 ------------------------ INICIO CODIGO TECLADO -----------------------------
 	process(clk) begin
 		if rising_edge(clk) then
-			if counter = 24999 then
+			a1_a2_select_prev <= a1_a2_select;
+			if (a1_a2_select_prev = '1' and a1_a2_select = '0') then
+				num_hexa <= "0000000000000000";
+			elsif counter = 24999 then
 				counter <= 0;
 				case state is
 					when COL1W =>
@@ -261,7 +264,7 @@ begin
 ----------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
------------------------- INICIO CODIGO EJECUCION -----------------------------
+------------------------ INICIO CODIGO ASCCI -----------------------------
 	process(clk) begin
 		if rising_edge(clk) then
 			rd1_ascii(3) <= hex_to_ascii(rd1_data(15 downto 12));
@@ -274,16 +277,7 @@ begin
 			rd2_ascii(0) <= hex_to_ascii(rd2_data(3 downto 0));
 		end if;
 	end process;
-
-	process(clk) begin
-		if rising_edge(clk) then
-			a1_a2_select_prev <= a1_a2_select;
-			if a1_a2_select_prev = '1' and a1_a2_select = '0' then
-				num_hexa <= "0000000000000000";
-			end if;
-		end if;
-	end process;
--------------------------- FIN CODIGO EJECUCION ------------------------------
+-------------------------- FIN CODIGO ASCCI ------------------------------
 ------------------------------------------------------------------------------
 
 end Behavioral;

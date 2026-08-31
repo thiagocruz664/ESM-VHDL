@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DMA_test
-Sun Aug 30 21:40:47 2026
+Sun Aug 30 22:26:01 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -21,15 +21,17 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
  13. Registers Packed Into Inferred Megafunctions
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated
- 16. Parameter Settings for User Entity Instance: Top-level Entity: |MU_VHDL
- 17. Parameter Settings for User Entity Instance: PROCESADOR_LCD_REVD:u1
- 18. Parameter Settings for Inferred Entity Instance: mem_u:mem_u|altsyncram:mem_ram_rtl_0
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "mem_u:mem_u"
- 21. Port Connectivity Checks: "PROCESADOR_LCD_REVD:u1"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 16. Source assignments for mem_u:mem_u|altsyncram:mem_ram_rtl_1|altsyncram_tru1:auto_generated
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |MU_VHDL
+ 18. Parameter Settings for User Entity Instance: PROCESADOR_LCD_REVD:u1
+ 19. Parameter Settings for Inferred Entity Instance: mem_u:mem_u|altsyncram:mem_ram_rtl_0
+ 20. Parameter Settings for Inferred Entity Instance: mem_u:mem_u|altsyncram:mem_ram_rtl_1
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "mem_u:mem_u"
+ 23. Port Connectivity Checks: "PROCESADOR_LCD_REVD:u1"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -56,16 +58,16 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 30 21:40:47 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 30 22:26:00 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; DMA_test                                        ;
 ; Top-level Entity Name           ; MU_VHDL                                         ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 225                                             ;
-; Total pins                      ; 33                                              ;
+; Total registers                 ; 304                                             ;
+; Total pins                      ; 35                                              ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 1,048,576                                       ;
+; Total block memory bits         ; 2,097,152                                       ;
 ; Total DSP Blocks                ; 0                                               ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -210,6 +212,7 @@ on the Quartus Prime software download page.
 ; db/dma_test.ram0_mem_u_70ac38d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/msys64/home/cruzt/DMA_test/db/dma_test.ram0_mem_u_70ac38d.hdl.mif         ;         ;
 ; db/decode_dla.tdf                      ; yes             ; Auto-Generated Megafunction                           ; C:/msys64/home/cruzt/DMA_test/db/decode_dla.tdf                              ;         ;
 ; db/mux_chb.tdf                         ; yes             ; Auto-Generated Megafunction                           ; C:/msys64/home/cruzt/DMA_test/db/mux_chb.tdf                                 ;         ;
+; db/altsyncram_tru1.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/msys64/home/cruzt/DMA_test/db/altsyncram_tru1.tdf                         ;         ;
 +----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
 
 
@@ -218,42 +221,46 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 428       ;
+; Estimate of Logic utilization (ALMs needed) ; 522       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 670       ;
-;     -- 7 input functions                    ; 14        ;
-;     -- 6 input functions                    ; 163       ;
-;     -- 5 input functions                    ; 173       ;
-;     -- 4 input functions                    ; 152       ;
-;     -- <=3 input functions                  ; 168       ;
+; Combinational ALUT usage for logic          ; 778       ;
+;     -- 7 input functions                    ; 7         ;
+;     -- 6 input functions                    ; 244       ;
+;     -- 5 input functions                    ; 169       ;
+;     -- 4 input functions                    ; 169       ;
+;     -- <=3 input functions                  ; 189       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 225       ;
+; Dedicated logic registers                   ; 304       ;
 ;                                             ;           ;
-; I/O pins                                    ; 33        ;
+; I/O pins                                    ; 35        ;
 ; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 1048576   ;
+; Total block memory bits                     ; 2097152   ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 353       ;
-; Total fan-out                               ; 5656      ;
-; Average fan-out                             ; 5.19      ;
+; Maximum fan-out                             ; 560       ;
+; Total fan-out                               ; 10394     ;
+; Average fan-out                             ; 7.38      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+---------------------+--------------+
-; |MU_VHDL                                  ; 670 (145)           ; 225 (114)                 ; 1048576           ; 0          ; 33   ; 0            ; |MU_VHDL                                                                                  ; MU_VHDL             ; work         ;
-;    |PROCESADOR_LCD_REVD:u1|               ; 482 (482)           ; 108 (108)                 ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|PROCESADOR_LCD_REVD:u1                                                           ; PROCESADOR_LCD_REVD ; work         ;
-;    |mem_u:mem_u|                          ; 43 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u                                                                      ; mem_u               ; work         ;
-;       |altsyncram:mem_ram_rtl_0|          ; 43 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0                                             ; altsyncram          ; work         ;
-;          |altsyncram_1vr1:auto_generated| ; 43 (0)              ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated              ; altsyncram_1vr1     ; work         ;
-;             |mux_chb:mux3|                ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated|mux_chb:mux3 ; mux_chb             ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                       ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |MU_VHDL                                  ; 778 (187)           ; 304 (190)                 ; 2097152           ; 0          ; 35   ; 0            ; |MU_VHDL                                                                                        ; MU_VHDL             ; work         ;
+;    |PROCESADOR_LCD_REVD:u1|               ; 497 (497)           ; 108 (108)                 ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|PROCESADOR_LCD_REVD:u1                                                                 ; PROCESADOR_LCD_REVD ; work         ;
+;    |mem_u:mem_u|                          ; 94 (0)              ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u                                                                            ; mem_u               ; work         ;
+;       |altsyncram:mem_ram_rtl_0|          ; 51 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0                                                   ; altsyncram          ; work         ;
+;          |altsyncram_1vr1:auto_generated| ; 51 (0)              ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated                    ; altsyncram_1vr1     ; work         ;
+;             |decode_dla:decode2|          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated|decode_dla:decode2 ; decode_dla          ; work         ;
+;             |mux_chb:mux3|                ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated|mux_chb:mux3       ; mux_chb             ; work         ;
+;       |altsyncram:mem_ram_rtl_1|          ; 43 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_1                                                   ; altsyncram          ; work         ;
+;          |altsyncram_tru1:auto_generated| ; 43 (0)              ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_1|altsyncram_tru1:auto_generated                    ; altsyncram_tru1     ; work         ;
+;             |mux_chb:mux3|                ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MU_VHDL|mem_u:mem_u|altsyncram:mem_ram_rtl_1|altsyncram_tru1:auto_generated|mux_chb:mux3       ; mux_chb             ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -263,6 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                    ;
 +--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+----------------------------------------+
 ; mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 65536        ; 16           ; 65536        ; 16           ; 1048576 ; db/DMA_test.ram0_mem_u_70ac38d.hdl.mif ;
+; mem_u:mem_u|altsyncram:mem_ram_rtl_1|altsyncram_tru1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 65536        ; 16           ; 65536        ; 16           ; 1048576 ; db/DMA_test.ram0_mem_u_70ac38d.hdl.mif ;
 +--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+----------------------------------------+
 
 
@@ -310,27 +318,31 @@ Encoding Type:  One-Hot
 ; PROCESADOR_LCD_REVD:u1|ciclo_enable[9]                      ; Merged with PROCESADOR_LCD_REVD:u1|ciclo_enable[8] ;
 ; PROCESADOR_LCD_REVD:u1|ciclo_enable[8]                      ; Merged with PROCESADOR_LCD_REVD:u1|ciclo_enable[7] ;
 ; PROCESADOR_LCD_REVD:u1|ciclo_enable[7]                      ; Merged with PROCESADOR_LCD_REVD:u1|ciclo_enable[3] ;
+; a2_ascii[3][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; rd1_ascii[1][7]                                             ; Stuck at GND due to stuck port data_in             ;
+; rd1_ascii[0][7]                                             ; Stuck at GND due to stuck port data_in             ;
+; a1_ascii[3][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; a1_ascii[2][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; a1_ascii[1][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; a2_ascii[0][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; a2_ascii[2][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; a2_ascii[1][7]                                              ; Stuck at GND due to stuck port data_in             ;
+; rd2_ascii[3][7]                                             ; Stuck at GND due to stuck port data_in             ;
+; rd2_ascii[2][7]                                             ; Stuck at GND due to stuck port data_in             ;
+; rd2_ascii[1][7]                                             ; Stuck at GND due to stuck port data_in             ;
+; rd2_ascii[0][7]                                             ; Stuck at GND due to stuck port data_in             ;
 ; a1_ascii[0][7]                                              ; Stuck at GND due to stuck port data_in             ;
 ; rd1_ascii[3][7]                                             ; Stuck at GND due to stuck port data_in             ;
 ; rd1_ascii[2][7]                                             ; Stuck at GND due to stuck port data_in             ;
-; a1_ascii[2][7]                                              ; Stuck at GND due to stuck port data_in             ;
-; a1_ascii[3][7]                                              ; Stuck at GND due to stuck port data_in             ;
-; a1_ascii[1][7]                                              ; Stuck at GND due to stuck port data_in             ;
-; rd1_ascii[0][7]                                             ; Stuck at GND due to stuck port data_in             ;
-; rd1_ascii[1][7]                                             ; Stuck at GND due to stuck port data_in             ;
-; a1_ascii[0][5]                                              ; Merged with a1_ascii[0][6]                         ;
-; a1_ascii[0][4]                                              ; Merged with a1_ascii[0][6]                         ;
-; rd1_ascii[3][5]                                             ; Merged with rd1_ascii[3][6]                        ;
-; rd1_ascii[2][5]                                             ; Merged with rd1_ascii[2][6]                        ;
-; a1_ascii[2][5]                                              ; Merged with a1_ascii[2][6]                         ;
-; a1_ascii[2][4]                                              ; Merged with a1_ascii[2][6]                         ;
-; a1_ascii[3][5]                                              ; Merged with a1_ascii[3][6]                         ;
-; a1_ascii[3][4]                                              ; Merged with a1_ascii[3][6]                         ;
-; a1_ascii[1][5]                                              ; Merged with a1_ascii[1][6]                         ;
-; a1_ascii[1][4]                                              ; Merged with a1_ascii[1][6]                         ;
-; rd1_ascii[0][5]                                             ; Merged with rd1_ascii[0][6]                        ;
-; rd1_ascii[1][5]                                             ; Merged with rd1_ascii[1][6]                        ;
-; Total Number of Removed Registers = 66                      ;                                                    ;
+; rd1_ascii[0][6]                                             ; Merged with rd1_ascii[0][5]                        ;
+; rd1_ascii[1][6]                                             ; Merged with rd1_ascii[1][5]                        ;
+; rd2_ascii[3][6]                                             ; Merged with rd2_ascii[3][5]                        ;
+; rd2_ascii[2][6]                                             ; Merged with rd2_ascii[2][5]                        ;
+; rd2_ascii[1][6]                                             ; Merged with rd2_ascii[1][5]                        ;
+; rd2_ascii[0][6]                                             ; Merged with rd2_ascii[0][5]                        ;
+; rd1_ascii[3][6]                                             ; Merged with rd1_ascii[3][5]                        ;
+; rd1_ascii[2][6]                                             ; Merged with rd1_ascii[2][5]                        ;
+; Total Number of Removed Registers = 70                      ;                                                    ;
 +-------------------------------------------------------------+----------------------------------------------------+
 
 
@@ -339,27 +351,55 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 225   ;
-; Number of registers using Synchronous Clear  ; 72    ;
+; Total registers                              ; 304   ;
+; Number of registers using Synchronous Clear  ; 88    ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 169   ;
+; Number of registers using Clock Enable       ; 239   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; rd1_ascii[3][4]                        ; 1       ;
-; rd1_ascii[2][4]                        ; 1       ;
-; rd1_ascii[0][4]                        ; 1       ;
-; rd1_ascii[1][4]                        ; 5       ;
-; Total number of inverted registers = 4 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; rd1_ascii[3][5]                         ; 2       ;
+; rd1_ascii[2][5]                         ; 2       ;
+; rd1_ascii[1][5]                         ; 2       ;
+; rd1_ascii[0][5]                         ; 2       ;
+; rd2_ascii[3][5]                         ; 2       ;
+; rd2_ascii[2][5]                         ; 2       ;
+; rd2_ascii[1][5]                         ; 2       ;
+; rd2_ascii[0][5]                         ; 2       ;
+; a1_ascii[0][5]                          ; 1       ;
+; a2_ascii[3][5]                          ; 1       ;
+; a1_ascii[3][5]                          ; 1       ;
+; a1_ascii[2][5]                          ; 1       ;
+; a1_ascii[1][5]                          ; 1       ;
+; a2_ascii[1][5]                          ; 1       ;
+; a2_ascii[0][5]                          ; 1       ;
+; a2_ascii[2][5]                          ; 1       ;
+; a1_ascii[0][4]                          ; 1       ;
+; rd1_ascii[3][4]                         ; 1       ;
+; rd1_ascii[2][4]                         ; 1       ;
+; rd1_ascii[0][4]                         ; 1       ;
+; rd1_ascii[1][4]                         ; 1       ;
+; a2_ascii[3][4]                          ; 1       ;
+; a1_ascii[3][4]                          ; 1       ;
+; a1_ascii[2][4]                          ; 1       ;
+; a1_ascii[1][4]                          ; 1       ;
+; rd2_ascii[3][4]                         ; 1       ;
+; rd2_ascii[2][4]                         ; 1       ;
+; rd2_ascii[1][4]                         ; 1       ;
+; rd2_ascii[0][4]                         ; 1       ;
+; a2_ascii[1][4]                          ; 1       ;
+; a2_ascii[0][4]                          ; 1       ;
+; a2_ascii[2][4]                          ; 1       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -368,28 +408,39 @@ Encoding Type:  One-Hot
 ; Register Name          ; Megafunction              ; Type ;
 +------------------------+---------------------------+------+
 ; mem_u:mem_u|rd1[0..15] ; mem_u:mem_u|mem_ram_rtl_0 ; RAM  ;
+; mem_u:mem_u|rd2[0..15] ; mem_u:mem_u|mem_ram_rtl_1 ; RAM  ;
 +------------------------+---------------------------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|dir_mem_s[2]   ;
-; 7:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|data_s[6]      ;
-; 8:1                ; 22 bits   ; 110 LEs       ; 0 LEs                ; 110 LEs                ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|conta_delay[0] ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_l_ram[0]   ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 25 LEs               ; 5 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_ram[6]     ;
-; 9:1                ; 19 bits   ; 114 LEs       ; 76 LEs               ; 38 LEs                 ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_c_char[32] ;
-; 49:1               ; 2 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|DATA[6]        ;
-; 49:1               ; 18 bits   ; 576 LEs       ; 288 LEs              ; 288 LEs                ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|RW             ;
-; 42:1               ; 8 bits    ; 224 LEs       ; 200 LEs              ; 24 LEs                 ; No         ; |MU_VHDL|Mux8                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|dir_mem_s[2]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MU_VHDL|num_hexa[10]                            ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|data_s[4]        ;
+; 8:1                ; 22 bits   ; 110 LEs       ; 0 LEs                ; 110 LEs                ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|conta_delay[5]   ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_l_ram[2]     ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 25 LEs               ; 5 LEs                  ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_c_char[2]    ;
+; 9:1                ; 19 bits   ; 114 LEs       ; 76 LEs               ; 38 LEs                 ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|vec_c_char[5]    ;
+; 49:1               ; 2 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|DATA[6]          ;
+; 49:1               ; 18 bits   ; 576 LEs       ; 288 LEs              ; 288 LEs                ; Yes        ; |MU_VHDL|PROCESADOR_LCD_REVD:u1|ciclo_enable[10] ;
+; 42:1               ; 8 bits    ; 224 LEs       ; 224 LEs              ; 0 LEs                  ; No         ; |MU_VHDL|Mux8                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------+
 ; Source assignments for mem_u:mem_u|altsyncram:mem_ram_rtl_0|altsyncram_1vr1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------+
+; Assignment                      ; Value              ; From ; To                           ;
++---------------------------------+--------------------+------+------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                            ;
++---------------------------------+--------------------+------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Source assignments for mem_u:mem_u|altsyncram:mem_ram_rtl_1|altsyncram_tru1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------+
 ; Assignment                      ; Value              ; From ; To                           ;
 +---------------------------------+--------------------+------+------------------------------+
@@ -479,13 +530,85 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mem_u:mem_u|altsyncram:mem_ram_rtl_1        ;
++------------------------------------+----------------------------------------+----------------+
+; Parameter Name                     ; Value                                  ; Type           ;
++------------------------------------+----------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                      ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                     ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                    ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                     ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                    ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                      ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                              ; Untyped        ;
+; WIDTH_A                            ; 16                                     ; Untyped        ;
+; WIDTHAD_A                          ; 16                                     ; Untyped        ;
+; NUMWORDS_A                         ; 65536                                  ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                           ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                   ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                   ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                   ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                   ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                   ; Untyped        ;
+; WIDTH_B                            ; 16                                     ; Untyped        ;
+; WIDTHAD_B                          ; 16                                     ; Untyped        ;
+; NUMWORDS_B                         ; 65536                                  ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                 ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                 ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK0                                 ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                 ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                           ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                 ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                   ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                   ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                   ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                   ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                   ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                   ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                      ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                      ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                   ; Untyped        ;
+; BYTE_SIZE                          ; 8                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                   ; Untyped        ;
+; INIT_FILE                          ; db/DMA_test.ram0_mem_u_70ac38d.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                 ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                      ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                        ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                        ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                  ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                  ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                      ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                              ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_tru1                        ; Untyped        ;
++------------------------------------+----------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                 ;
 +-------------------------------------------+--------------------------------------+
 ; Name                                      ; Value                                ;
 +-------------------------------------------+--------------------------------------+
-; Number of entity instances                ; 1                                    ;
+; Number of entity instances                ; 2                                    ;
 ; Entity Instance                           ; mem_u:mem_u|altsyncram:mem_ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                            ;
+;     -- WIDTH_A                            ; 16                                   ;
+;     -- NUMWORDS_A                         ; 65536                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                         ;
+;     -- WIDTH_B                            ; 16                                   ;
+;     -- NUMWORDS_B                         ; 65536                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                             ;
+; Entity Instance                           ; mem_u:mem_u|altsyncram:mem_ram_rtl_1 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                            ;
 ;     -- WIDTH_A                            ; 16                                   ;
 ;     -- NUMWORDS_A                         ; 65536                                ;
@@ -499,13 +622,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mem_u:mem_u"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; rd2  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------+
+; Port Connectivity Checks: "mem_u:mem_u"      ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; wd2[15..2] ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -522,32 +645,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 225                         ;
-;     ENA               ; 107                         ;
-;     ENA SCLR          ; 57                          ;
+; arriav_ff             ; 304                         ;
+;     ENA               ; 146                         ;
+;     ENA SCLR          ; 88                          ;
 ;     ENA SLD           ; 5                           ;
-;     SCLR              ; 15                          ;
-;     plain             ; 41                          ;
-; arriav_lcell_comb     ; 671                         ;
+;     plain             ; 65                          ;
+; arriav_lcell_comb     ; 779                         ;
 ;     arith             ; 75                          ;
 ;         1 data inputs ; 53                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 13                          ;
-;     extend            ; 14                          ;
-;         7 data inputs ; 14                          ;
-;     normal            ; 582                         ;
+;         4 data inputs ; 22                          ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 697                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 36                          ;
-;         3 data inputs ; 66                          ;
-;         4 data inputs ; 139                         ;
-;         5 data inputs ; 173                         ;
-;         6 data inputs ; 163                         ;
-; boundary_port         ; 33                          ;
-; stratixv_ram_block    ; 128                         ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 88                          ;
+;         4 data inputs ; 147                         ;
+;         5 data inputs ; 169                         ;
+;         6 data inputs ; 244                         ;
+; boundary_port         ; 35                          ;
+; stratixv_ram_block    ; 256                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.53                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.30                        ;
 +-----------------------+-----------------------------+
 
 
@@ -566,7 +687,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Aug 30 21:40:34 2026
+    Info: Processing started: Sun Aug 30 22:25:47 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DMA_test -c DMA_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -574,7 +695,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file mu/mu.v
     Info (12022): Found design unit 1: mem_u-func_mem_u File: C:/msys64/home/cruzt/DMA_test/mu/mu.vhd Line: 14
     Info (12023): Found entity 1: mem_u File: C:/msys64/home/cruzt/DMA_test/mu/mu.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file mu/main.vhd
-    Info (12022): Found design unit 1: MU_VHDL-Behavioral File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 32
+    Info (12022): Found design unit 1: MU_VHDL-Behavioral File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 33
     Info (12023): Found entity 1: MU_VHDL File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mu/lcd_procesador_lcd_revd.vhd
     Info (12022): Found design unit 1: PROCESADOR_LCD_REVD-Behavioral File: C:/msys64/home/cruzt/DMA_test/mu/lcd_PROCESADOR_LCD_REVD.vhd Line: 31
@@ -589,17 +710,12 @@ Info (12127): Elaborating entity "MU_VHDL" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at main.vhd(13): used explicit default value for signal "VO" because signal was never assigned a value File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 13
 Warning (10540): VHDL Signal Declaration warning at main.vhd(18): used explicit default value for signal "BLK" because signal was never assigned a value File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 18
 Warning (10540): VHDL Signal Declaration warning at main.vhd(19): used explicit default value for signal "BLA" because signal was never assigned a value File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 19
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(71): object "blcd" assigned a value but never read File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 71
-Warning (10541): VHDL Signal Declaration warning at main.vhd(88): used implicit default value for signal "a2_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 88
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(89): object "rd2_data" assigned a value but never read File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 89
-Warning (10541): VHDL Signal Declaration warning at main.vhd(90): used implicit default value for signal "wd2_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 90
-Warning (10540): VHDL Signal Declaration warning at main.vhd(96): used explicit default value for signal "a2_ascii" because signal was never assigned a value File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 96
-Warning (10540): VHDL Signal Declaration warning at main.vhd(97): used explicit default value for signal "rd2_ascii" because signal was never assigned a value File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 97
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(72): object "blcd" assigned a value but never read File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 72
 Warning (10873): Using initial value X (don't care) for net "led_debug[7..5]" at main.vhd(26) File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 26
-Info (12128): Elaborating entity "PROCESADOR_LCD_REVD" for hierarchy "PROCESADOR_LCD_REVD:u1" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 113
-Info (12128): Elaborating entity "CARACTERES_ESPECIALES_REVD" for hierarchy "CARACTERES_ESPECIALES_REVD:U2" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 121
-Info (12128): Elaborating entity "mem_u" for hierarchy "mem_u:mem_u" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 126
-Info (19000): Inferred 1 megafunctions from design logic
+Info (12128): Elaborating entity "PROCESADOR_LCD_REVD" for hierarchy "PROCESADOR_LCD_REVD:u1" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 114
+Info (12128): Elaborating entity "CARACTERES_ESPECIALES_REVD" for hierarchy "CARACTERES_ESPECIALES_REVD:U2" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 122
+Info (12128): Elaborating entity "mem_u" for hierarchy "mem_u:mem_u" File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 127
+Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "mem_u:mem_u|mem_ram_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 16
@@ -617,6 +733,24 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/DMA_test.ram0_mem_u_70ac38d.hdl.mif
         Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "mem_u:mem_u|mem_ram_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 16
+        Info (286033): Parameter NUMWORDS_A set to 65536
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 16
+        Info (286033): Parameter NUMWORDS_B set to 65536
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/DMA_test.ram0_mem_u_70ac38d.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
 Info (12130): Elaborated megafunction instantiation "mem_u:mem_u|altsyncram:mem_ram_rtl_0"
 Info (12133): Instantiated megafunction "mem_u:mem_u|altsyncram:mem_ram_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -641,27 +775,48 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/deco
     Info (12023): Found entity 1: decode_dla File: C:/msys64/home/cruzt/DMA_test/db/decode_dla.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
     Info (12023): Found entity 1: mux_chb File: C:/msys64/home/cruzt/DMA_test/db/mux_chb.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "mem_u:mem_u|altsyncram:mem_ram_rtl_1"
+Info (12133): Instantiated megafunction "mem_u:mem_u|altsyncram:mem_ram_rtl_1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "16"
+    Info (12134): Parameter "NUMWORDS_A" = "65536"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "16"
+    Info (12134): Parameter "NUMWORDS_B" = "65536"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/DMA_test.ram0_mem_u_70ac38d.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tru1.tdf
+    Info (12023): Found entity 1: altsyncram_tru1 File: C:/msys64/home/cruzt/DMA_test/db/altsyncram_tru1.tdf Line: 32
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VO" is stuck at VCC File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 13
     Warning (13410): Pin "RW" is stuck at GND File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 15
     Warning (13410): Pin "BLK" is stuck at GND File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 18
     Warning (13410): Pin "BLA" is stuck at VCC File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 19
-    Warning (13410): Pin "led_debug[4]" is stuck at VCC File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 187
+    Warning (13410): Pin "led_debug[4]" is stuck at VCC File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 188
     Warning (13410): Pin "led_debug[5]" is stuck at GND File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 26
     Warning (13410): Pin "led_debug[6]" is stuck at GND File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 26
     Warning (13410): Pin "led_debug[7]" is stuck at GND File: C:/msys64/home/cruzt/DMA_test/mu/main.vhd Line: 26
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 901 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
+Info (21057): Implemented 1219 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
     Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 740 logic cells
-    Info (21064): Implemented 128 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 4972 megabytes
-    Info: Processing ended: Sun Aug 30 21:40:47 2026
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21061): Implemented 928 logic cells
+    Info (21064): Implemented 256 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 5006 megabytes
+    Info: Processing ended: Sun Aug 30 22:26:01 2026
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:28
 
 

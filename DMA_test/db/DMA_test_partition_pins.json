@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "a1_a2_select",
+					"strict" : false
+				},
+				{
 					"name" : "L[3]",
 					"strict" : false
 				},
@@ -100,7 +104,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ex_bttn",
+					"name" : "wd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "wd[0]",
 					"strict" : false
 				}
 			]
