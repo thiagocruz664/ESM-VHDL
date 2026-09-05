@@ -6,3 +6,14 @@ vhdl.code-workspace
 *.cf
 *.vcd
 *.zip
+
+db/
+incremental_db/
+*.qws
+*.smsg
+*.rpt
+*.summary
+*.done
+*.pin
+*.qdf
+*.bak
