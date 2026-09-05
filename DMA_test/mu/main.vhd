@@ -22,6 +22,12 @@ entity MU_VHDL is
 		L           : in std_logic_vector(0 to 3);
 		C           : out std_logic_vector(0 to 3);
 		
+		--------------- PUERTOS PARA DMA ---------------
+		qsys_dma_data    : in  std_logic_vector(15 downto 0);
+		qsys_dma_valid   : in  std_logic;
+		qsys_dma_sop     : in  std_logic;
+		qsys_dma_ready   : out std_logic;
+		
     --------------- OTROS PUERTOS ---------------
 		led_debug   : out std_logic_vector(7 downto 0);
 		we_i		: in std_logic;
@@ -132,7 +138,13 @@ begin
 			clk => CLK,
 			we => we_i,
 			rd1 => rd1_data,
-			rd2 => rd2_data
+			rd2 => rd2_data,
+			
+		-- Conexiones directas a los cables que exporta el bloque mSGDMA
+        dma_data          => qsys_dma_data,
+        dma_valid         => qsys_dma_valid,
+        dma_startofpacket => qsys_dma_sop,
+        dma_ready         => qsys_dma_ready
 		);
 
 ------------------------------------------------------------------------

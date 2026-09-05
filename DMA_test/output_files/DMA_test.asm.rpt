@@ -1,5 +1,5 @@
 Assembler report for DMA_test
-Sun Aug 30 21:45:39 2026
+Fri Sep  4 09:00:35 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Aug 30 21:45:39 2026 ;
+; Assembler Status      ; Successful - Fri Sep  4 09:00:35 2026 ;
 ; Revision Name         ; DMA_test                              ;
 ; Top-level Entity Name ; MU_VHDL                               ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ on the Quartus Prime software download page.
 +----------------+------------------------------------------------------------------+
 ; Option         ; Setting                                                          ;
 +----------------+------------------------------------------------------------------+
-; JTAG usercode  ; 0x02DA8541                                                       ;
-; Checksum       ; 0x02DA8541                                                       ;
+; JTAG usercode  ; 0x056BDFBF                                                       ;
+; Checksum       ; 0x056BDFBF                                                       ;
 +----------------+------------------------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Aug 30 21:45:30 2026
+    Info: Processing started: Fri Sep  4 09:00:27 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DMA_test -c DMA_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4990 megabytes
-    Info: Processing ended: Sun Aug 30 21:45:39 2026
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 5006 megabytes
+    Info: Processing ended: Fri Sep  4 09:00:35 2026
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sun Aug 30 21:45:28 2026
+Fitter Status : Successful - Fri Sep  4 09:00:25 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : DMA_test
 Top-level Entity Name : MU_VHDL
 Family : Cyclone V
 Device : 5CSEMA4U23C6
 Timing Models : Final
-Logic utilization (in ALMs) : 424 / 15,880 ( 3 % )
-Total registers : 256
-Total pins : 33 / 314 ( 11 % )
+Logic utilization (in ALMs) : 520 / 15,880 ( 3 % )
+Total registers : 329
+Total pins : 35 / 314 ( 11 % )
 Total virtual pins : 0
-Total block memory bits : 1,048,576 / 2,764,800 ( 38 % )
-Total RAM Blocks : 128 / 270 ( 47 % )
+Total block memory bits : 2,097,152 / 2,764,800 ( 76 % )
+Total RAM Blocks : 256 / 270 ( 95 % )
 Total DSP Blocks : 0 / 84 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

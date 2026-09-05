@@ -1,17 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Aug 30 22:26:00 2026
+Analysis & Synthesis Status : Failed - Fri Sep  4 09:13:15 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : DMA_test
 Top-level Entity Name : MU_VHDL
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A
-Total registers : 304
-Total pins : 35
-Total virtual pins : 0
-Total block memory bits : 2,097,152
-Total DSP Blocks : 0
-Total HSSI RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
-Total PLLs : 0
-Total DLLs : 0
+Logic utilization (in ALMs) : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total block memory bits : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+Total DLLs : N/A until Partition Merge
