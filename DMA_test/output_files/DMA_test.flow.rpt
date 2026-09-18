@@ -1,5 +1,5 @@
 Flow report for DMA_test
-Fri Sep  4 09:13:15 2026
+Fri Sep 18 15:53:39 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -38,24 +38,29 @@ on the Quartus Prime software download page.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Flow Status                 ; Flow Failed - Fri Sep  4 09:13:15 2026          ;
-; Quartus Prime Version       ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name               ; DMA_test                                        ;
-; Top-level Entity Name       ; MU_VHDL                                         ;
-; Family                      ; Cyclone V                                       ;
-; Device                      ; 5CSEMA4U23C6                                    ;
-; Timing Models               ; Final                                           ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Fri Sep 18 15:53:39 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; DMA_test                                        ;
+; Top-level Entity Name           ; MU_VHDL                                         ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA4U23C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 1,065 / 15,880 ( 7 % )                          ;
+; Total registers                 ; 1048                                            ;
+; Total pins                      ; 72 / 314 ( 23 % )                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 2,105,600 / 2,764,800 ( 76 % )                  ;
+; Total DSP Blocks                ; 0 / 84 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1 / 5 ( 20 % )                                  ;
+; Total DLLs                      ; 1 / 4 ( 25 % )                                  ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,35 +68,37 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/04/2026 09:13:07 ;
+; Start date & time ; 09/18/2026 15:43:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DMA_test            ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                               ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589190.178852398710436         ; --            ; --          ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Altera FPGA (Verilog)           ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; MU_VHDL                                ; DMA_test      ; --          ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++---------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                       ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
++---------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                 ; 10995770589190.178975702414592         ; --            ; --          ; --                                ;
+; ECO_REGENERATE_REPORT                 ; On                                     ; Off           ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                   ; Questa Altera FPGA (Verilog)           ; <None>        ; --          ; --                                ;
+; EDA_TIME_SCALE                        ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                                     ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                                      ; --            ; --          ; --                                ;
+; PARTITION_COLOR                       ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL   ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
+; PARTITION_NETLIST_TYPE                ; -- (Not supported for targeted family) ; --            ; MU_VHDL     ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL             ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY              ; output_files                           ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                      ; MU_VHDL                                ; DMA_test      ; --          ; --                                ;
+; USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ; On                                     ; Off           ; --          ; --                                ;
++---------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -99,8 +106,12 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4872 MB             ; 00:00:21                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis ; 00:01:18     ; 1.0                     ; 5224 MB             ; 00:02:29                           ;
+; Fitter               ; 00:07:57     ; 1.1                     ; 8339 MB             ; 00:59:20                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 5050 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:22     ; 2.3                     ; 5857 MB             ; 00:00:45                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4887 MB             ; 00:00:02                           ;
+; Total                ; 00:09:46     ; --                      ; --                  ; 01:02:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,6 +121,10 @@ on the Quartus Prime software download page.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; thiago664        ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; thiago664        ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; thiago664        ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; thiago664        ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; thiago664        ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -117,6 +132,10 @@ on the Quartus Prime software download page.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off DMA_test -c DMA_test
+quartus_fit --read_settings_files=off --write_settings_files=off DMA_test -c DMA_test
+quartus_asm --read_settings_files=off --write_settings_files=off DMA_test -c DMA_test
+quartus_sta DMA_test -c DMA_test
+quartus_eda --read_settings_files=off --write_settings_files=off DMA_test -c DMA_test
 
 
 

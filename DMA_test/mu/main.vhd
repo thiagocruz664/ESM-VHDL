@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 USE WORK.COMANDOS_LCD_REVD.ALL;
---use work.alu.all;
 
 entity MU_VHDL is
     GENERIC(
@@ -23,10 +22,28 @@ entity MU_VHDL is
 		C           : out std_logic_vector(0 to 3);
 		
 		--------------- PUERTOS PARA DMA ---------------
-		qsys_dma_data    : in  std_logic_vector(15 downto 0);
-		qsys_dma_valid   : in  std_logic;
-		qsys_dma_sop     : in  std_logic;
-		qsys_dma_ready   : out std_logic;
+--		qsys_dma_data    : in  std_logic_vector(15 downto 0);
+--		qsys_dma_valid   : in  std_logic;
+--		qsys_dma_sop     : in  std_logic;
+--		qsys_dma_ready   : out std_logic;
+
+        --------------- PIN EXTERNO DE LA MEMORIA HPS (DDR3) ---------------
+        hps_memory_mem_a      : out   std_logic_vector(12 downto 0);
+        hps_memory_mem_ba     : out   std_logic_vector(2 downto 0);
+        hps_memory_mem_ck     : out   std_logic;
+        hps_memory_mem_ck_n   : out   std_logic;
+        hps_memory_mem_cke    : out   std_logic;
+        hps_memory_mem_cs_n   : out   std_logic;
+        hps_memory_mem_ras_n  : out   std_logic;
+        hps_memory_mem_cas_n  : out   std_logic;
+        hps_memory_mem_we_n   : out   std_logic;
+        hps_memory_mem_reset_n: out   std_logic;
+        hps_memory_mem_dq     : inout std_logic_vector(7 downto 0);
+        hps_memory_mem_dqs    : inout std_logic;
+        hps_memory_mem_dqs_n  : inout std_logic;
+        hps_memory_mem_odt    : out   std_logic;
+        hps_memory_mem_dm     : out   std_logic;
+        hps_memory_oct_rzqin  : in    std_logic;
 		
     --------------- OTROS PUERTOS ---------------
 		led_debug   : out std_logic_vector(7 downto 0);
@@ -95,6 +112,7 @@ architecture Behavioral of MU_VHDL is
 	signal a2_data : std_logic_vector(15 downto 0);
 	signal rd2_data : std_logic_vector(15 downto 0);
 	signal wd2_data : std_logic_vector(15 downto 0);
+	signal a1_a2_select_prev : std_logic := '0';
 	
     ------------------------------ SEÑALES PARA ASCII ------------------------------
 	type t_num_ascii is array (0 to 3) of std_logic_vector (7 downto 0);
@@ -113,8 +131,60 @@ architecture Behavioral of MU_VHDL is
             end if;
 	end function;
 	 
-	------------------------------ OTRAS SEÑALES ------------------------------
-	signal a1_a2_select_prev : std_logic := '0';
+	------------------------------ SEÑALES PARA DMA ------------------------------
+	component dmasoc_system is
+		 port (
+			  clk_clk                              : in    std_logic                     := 'X';             -- clk
+			 -- reset_reset_n                        : in    std_logic                     := 'X';             -- reset_n
+			  
+			  -- Conexiones de Eventos MPU (Separados según tu bloque)
+			  h2f_mpu_events_eventi                : in   std_logic;                                        -- eventi
+			  h2f_mpu_events_evento                : out   std_logic;                                        -- evento
+			  h2f_mpu_events_standbywfe            : out   std_logic_vector(1 downto 0);                     -- standbywfe
+			  h2f_mpu_events_standbywfi            : out   std_logic_vector(1 downto 0);                     -- standbywfi
+			  
+			  -- Interfaz de datos del DMA hacia el VHDL
+			  dma_out_data                         : out   std_logic_vector(15 downto 0);                    -- data
+			  dma_out_valid                        : out   std_logic;                                        -- valid
+			  dma_out_ready                        : in    std_logic                     := 'X';             -- ready
+			  dma_out_startofpacket                : out   std_logic;                                        -- startofpacket
+			  dma_out_endofpacket                  : out   std_logic;                                        -- endofpacket
+			  dma_out_empty                        : out   std_logic_vector(0 downto 0);                     -- empty
+			  
+			  -- Relojes y Resets Exportados del mSGDMA
+			  msgdma_clk_out_clk                   : out   std_logic;                                        -- clk
+			  msgdma_reset_n_out_reset             : out   std_logic;                                        -- reset
+			  pll_0_locked_export                  : out   std_logic;                                        -- export
+			  
+			  -- Memoria RAM DDR3 Física
+			  memory_mem_a                         : out   std_logic_vector(12 downto 0);                    -- mem_a
+			  memory_mem_ba                        : out   std_logic_vector(2 downto 0);                     -- mem_ba
+			  memory_mem_ck                        : out   std_logic;                                        -- mem_ck
+			  memory_mem_ck_n                      : out   std_logic;                                        -- mem_ck_n
+			  memory_mem_cke                       : out   std_logic;                                        -- mem_cke
+			  memory_mem_cs_n                      : out   std_logic;                                        -- mem_cs_n
+			  memory_mem_ras_n                     : out   std_logic;                                        -- mem_ras_n
+			  memory_mem_cas_n                     : out   std_logic;                                        -- mem_cas_n
+			  memory_mem_we_n                      : out   std_logic;                                        -- mem_we_n
+			  memory_mem_reset_n                   : out   std_logic;                                        -- mem_reset_n
+			  memory_mem_dq                        : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- mem_dq
+			  memory_mem_dqs                       : inout std_logic                     := 'X';             -- mem_dqs
+			  memory_mem_dqs_n                     : inout std_logic                     := 'X';             -- mem_dqs_n
+			  memory_mem_odt                       : out   std_logic;                                        -- mem_odt
+			  memory_mem_dm                        : out   std_logic;                                        -- mem_dm
+			  memory_oct_rzqin                     : in    std_logic                     := 'X'              -- rzqin
+		 );
+	end component dmasoc_system;
+
+
+	-- SEÑAL INTERNA PARA EL RELOJ DE 100MHZ DEL PLL
+	signal clk_100mhz : std_logic;
+	
+	-- NUEVAS SEÑALES LOCALES PARA INTERCONECTAR EL DMA CON MEM_U
+	signal qsys_dma_data  : std_logic_vector(15 downto 0);
+	signal qsys_dma_valid : std_logic;
+	signal qsys_dma_sop   : std_logic;
+	signal qsys_dma_ready : std_logic;
 begin
     ------------------- COMPONENTES PARA LCD ------------------------
     u1: PROCESADOR_LCD_REVD
@@ -135,7 +205,7 @@ begin
 			a1 => a1_data,
 			a2 => a2_data,
 			wd2 => "00000000000000"&wd,
-			clk => CLK,
+			clk => clk_100mhz, --Ahora esta memoria va a 100MHz
 			we => we_i,
 			rd1 => rd1_data,
 			rd2 => rd2_data,
@@ -147,6 +217,50 @@ begin
         dma_ready         => qsys_dma_ready
 		);
 
+		
+	------------------------ Instanciación del HPS + mSGDMA ------------------------
+	u0 : dmasoc_system
+		port map (
+        clk_clk                              => CLK,
+        --reset_reset_n                        => '1',
+        
+        h2f_mpu_events_eventi                => '0', -- Tu cambio correcto anterior
+        h2f_mpu_events_evento                => open,
+        h2f_mpu_events_standbywfe            => open,
+        h2f_mpu_events_standbywfi            => open,
+        
+        dma_out_data                         => qsys_dma_data,
+        dma_out_valid                        => qsys_dma_valid,
+        dma_out_ready                        => qsys_dma_ready,
+        dma_out_startofpacket                => qsys_dma_sop,
+        dma_out_endofpacket                  => open,
+        dma_out_empty                        => open,
+        
+        msgdma_clk_out_clk                   => clk_100mhz,
+        msgdma_reset_n_out_reset             => open,
+        pll_0_locked_export                  => open,
+        
+        -- ¡CONECTADOS AQUÍ EN VEZ DE SELECCIONAR OPEN!
+        memory_mem_a                         => hps_memory_mem_a,
+        memory_mem_ba                        => hps_memory_mem_ba,
+        memory_mem_ck                        => hps_memory_mem_ck,
+        memory_mem_ck_n                      => hps_memory_mem_ck_n,
+        memory_mem_cke                       => hps_memory_mem_cke,
+        memory_mem_cs_n                      => hps_memory_mem_cs_n,
+        memory_mem_ras_n                     => hps_memory_mem_ras_n,
+        memory_mem_cas_n                     => hps_memory_mem_cas_n,
+        memory_mem_we_n                      => hps_memory_mem_we_n,
+        memory_mem_reset_n                   => hps_memory_mem_reset_n,
+        memory_mem_dq                        => hps_memory_mem_dq,
+        memory_mem_dqs                       => hps_memory_mem_dqs,
+        memory_mem_dqs_n                     => hps_memory_mem_dqs_n,
+        memory_mem_odt                       => hps_memory_mem_odt,
+        memory_mem_dm                        => hps_memory_mem_dm,
+        memory_oct_rzqin                     => hps_memory_oct_rzqin
+    );
+
+
+	 
 ------------------------------------------------------------------------
 ------------------------ INICIO CODIGO LCD -----------------------------
  	INST(0) <= LCD_INI("00"); 		-- INICIALIZAMOS LCD, CURSOR A HOME, CURSOR ON, PARPADEO ON.

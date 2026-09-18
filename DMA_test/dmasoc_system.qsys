@@ -237,7 +237,7 @@
   <parameter name="EXPORT_AFI_HALF_CLK" value="false" />
   <parameter name="EXTRA_SETTINGS" value="" />
   <parameter name="F2H_AXI_CLOCK_FREQ" value="100000000" />
-  <parameter name="F2H_SDRAM0_CLOCK_FREQ" value="100000000" />
+  <parameter name="F2H_SDRAM0_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM1_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM2_CLOCK_FREQ" value="100" />
   <parameter name="F2H_SDRAM3_CLOCK_FREQ" value="100" />
@@ -250,8 +250,8 @@
   <parameter name="F2SCLK_SDRAMCLK_Enable" value="false" />
   <parameter name="F2SCLK_SDRAMCLK_FREQ" value="0" />
   <parameter name="F2SCLK_WARMRST_Enable" value="false" />
-  <parameter name="F2SDRAM_Type" value="AXI-3" />
-  <parameter name="F2SDRAM_Width" value="256" />
+  <parameter name="F2SDRAM_Type" value="" />
+  <parameter name="F2SDRAM_Width" value="" />
   <parameter name="F2SINTERRUPT_Enable" value="true" />
   <parameter name="F2S_Width" value="2" />
   <parameter name="FIX_READ_LATENCY" value="8" />
@@ -682,7 +682,7 @@
   <parameter name="AUTO_DEVICE" value="5CSEMA4U23C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
-  <parameter name="AUTO_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='hps_0_bridges.f2h_sdram0_data' start='0x0' end='0x100000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='hps_0_axi_sdram.axi_slave0' start='0x0' end='0x80000000' /><slave name='hps_0_gmac0.axi_slave0' start='0xFF700000' end='0xFF702000' /><slave name='hps_0_gmac1.axi_slave0' start='0xFF702000' end='0xFF704000' /><slave name='hps_0_sdmmc.axi_slave0' start='0xFF704000' end='0xFF705000' /><slave name='hps_0_qspi.axi_slave0' start='0xFF705000' end='0xFF705100' /><slave name='hps_0_fpgamgr.axi_slave0' start='0xFF706000' end='0xFF707000' /><slave name='hps_0_gpio0.axi_slave0' start='0xFF708000' end='0xFF708100' /><slave name='hps_0_gpio1.axi_slave0' start='0xFF709000' end='0xFF709100' /><slave name='hps_0_gpio2.axi_slave0' start='0xFF70A000' end='0xFF70A100' /><slave name='hps_0_l3regs.axi_slave0' start='0xFF800000' end='0xFF801000' /><slave name='hps_0_nand0.axi_slave0' start='0xFF900000' end='0xFF910000' /><slave name='hps_0_qspi.axi_slave1' start='0xFFA00000' end='0xFFA00100' /><slave name='hps_0_usb0.axi_slave0' start='0xFFB00000' end='0xFFB40000' /><slave name='hps_0_usb1.axi_slave0' start='0xFFB40000' end='0xFFB80000' /><slave name='hps_0_nand0.axi_slave1' start='0xFFB80000' end='0xFFB90000' /><slave name='hps_0_fpgamgr.axi_slave1' start='0xFFB90000' end='0xFFB90100' /><slave name='hps_0_dcan0.axi_slave0' start='0xFFC00000' end='0xFFC01000' /><slave name='hps_0_dcan1.axi_slave0' start='0xFFC01000' end='0xFFC02000' /><slave name='hps_0_uart0.axi_slave0' start='0xFFC02000' end='0xFFC02100' /><slave name='hps_0_uart1.axi_slave0' start='0xFFC03000' end='0xFFC03100' /><slave name='hps_0_i2c0.axi_slave0' start='0xFFC04000' end='0xFFC04100' /><slave name='hps_0_i2c1.axi_slave0' start='0xFFC05000' end='0xFFC05100' /><slave name='hps_0_i2c2.axi_slave0' start='0xFFC06000' end='0xFFC06100' /><slave name='hps_0_i2c3.axi_slave0' start='0xFFC07000' end='0xFFC07100' /><slave name='hps_0_timer0.axi_slave0' start='0xFFC08000' end='0xFFC08100' /><slave name='hps_0_timer1.axi_slave0' start='0xFFC09000' end='0xFFC09100' /><slave name='hps_0_sdrctl.axi_slave0' start='0xFFC25000' end='0xFFC26000' /><slave name='hps_0_timer2.axi_slave0' start='0xFFD00000' end='0xFFD00100' /><slave name='hps_0_timer3.axi_slave0' start='0xFFD01000' end='0xFFD01100' /><slave name='hps_0_clkmgr.axi_slave0' start='0xFFD04000' end='0xFFD05000' /><slave name='hps_0_rstmgr.axi_slave0' start='0xFFD05000' end='0xFFD05100' /><slave name='hps_0_sysmgr.axi_slave0' start='0xFFD08000' end='0xFFD08400' /><slave name='hps_0_dma.axi_slave0' start='0xFFE01000' end='0xFFE02000' /><slave name='hps_0_spim0.axi_slave0' start='0xFFF00000' end='0xFFF00100' /><slave name='hps_0_spim1.axi_slave0' start='0xFFF01000' end='0xFFF01100' /><slave name='hps_0_arm_gic_0.axi_slave1' start='0xFFFEC100' end='0xFFFEC200' /><slave name='hps_0_timer.axi_slave0' start='0xFFFEC600' end='0xFFFEC700' /><slave name='hps_0_arm_gic_0.axi_slave0' start='0xFFFED000' end='0xFFFEE000' /><slave name='hps_0_L2.axi_slave0' start='0xFFFEF000' end='0xFFFF0000' /><slave name='hps_0_axi_ocram.axi_slave0' start='0xFFFF0000' end='0x100000000' /></address-map>]]></parameter>
   <parameter name="AUTO_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 32" />
   <parameter name="AUTO_MM_WRITE_ADDRESS_MAP" value="" />
   <parameter name="AUTO_MM_WRITE_ADDRESS_WIDTH" value="AddressWidth = -1" />
@@ -950,7 +950,7 @@
    kind="avalon"
    version="25.1"
    start="msgdma_0.mm_read"
-   end="hps_0.f2h_sdram0_data">
+   end="hps_0.f2h_axi_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -971,11 +971,6 @@
    version="25.1"
    start="pll_0.outclk0"
    end="hps_0.f2h_axi_clock" />
- <connection
-   kind="clock"
-   version="25.1"
-   start="pll_0.outclk0"
-   end="hps_0.f2h_sdram0_clock" />
  <connection
    kind="clock"
    version="25.1"
